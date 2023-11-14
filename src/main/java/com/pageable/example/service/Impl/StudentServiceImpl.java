@@ -7,6 +7,9 @@ import com.pageable.example.repository.StudentRepository;
 import com.pageable.example.service.StudentService;
 import com.pageable.example.util.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,5 +37,12 @@ public class StudentServiceImpl implements StudentService {
     public List<StudentResponse> getStudents() {
         List<StudentEntity> students = studentRepository.findAll();
         return studentMapper.entityToResponseList(students);
+    }
+
+    @Override
+    public Page<StudentResponse> getFilteredStudent(Integer page, Integer size, String orderBy, String direction) {
+        PageRequest pageRequest = PageRequest.of(page, size, Sort.Direction.valueOf(direction), orderBy);
+        Page<StudentEntity> foundStudents = studentRepository.findAll(pageRequest);
+        return foundStudents.map(StudentResponse::fromEntity);
     }
 }
