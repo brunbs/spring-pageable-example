@@ -1,4 +1,4 @@
-# spring-pageable-example
+# Retuning Pageable Objects in Java Spring Boot
 Project to show how to return a pageable content
 
 In this project I've implemented a way to return paginated objects using PagingAndSortingRepository interface in Spring Boot.
@@ -20,9 +20,9 @@ Very simple so we don't lose focus.
 
 The project was created in Java 21 with spring boot version 3.1.5
 
-Dependencies used:
-Lombok - to reduce boilerplate code
-Mapstruct - facilitates object mapping
-H2 - so we don't waste time configuring databases
-JPA - since we will work with persistence
-OpenAi - we will use a swagger so that you can run and use it without needing postman or another tool
+<b>Dependencies used:</b><br>
+<b>Lombok</b> - to reduce boilerplate code<br>
+<b>Mapstruct</b> - facilitates object mapping<br>
+<b>H2</b> - so we don't waste time configuring databases<br>
+<b>JPA</b> - since we will work with persistence<br>
+<b>OpenAi</b> - we will use a swagger so that you can run and use it without needing postman or another tool<br>
